@@ -37,6 +37,16 @@ class DungeonConfig {
     val showMileStonesDisplayPos: Position = Position(10, 10)
 
     @Expose
+    @ConfigOption(name = "Discoveries Display", desc = "Show the discoveries display in Dungeons (secrets/crypts).")
+    @ConfigEditorBoolean
+    @FeatureToggle
+    var showDiscoveriesDisplay: Boolean = false
+
+    @Expose
+    @ConfigLink(owner = DungeonConfig::class, field = "showDiscoveriesDisplay")
+    val showDiscoveriesDisplayPos: Position = Position(10, 10)
+
+    @Expose
     @ConfigOption(name = "Death Counter Display", desc = "Display the total amount of deaths in the current Dungeon.")
     @ConfigEditorBoolean
     @FeatureToggle
